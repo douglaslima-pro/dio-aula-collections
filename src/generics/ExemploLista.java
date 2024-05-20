@@ -1,13 +1,12 @@
 package generics;
 
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 
 import comparable_comparator.Pessoa;
 import comparable_comparator.CompararIdade;
 import comparable_comparator.CompararNomeIdadeEstado;
-
-import java.util.ArrayList;
-import java.util.Collections;
 
 public class ExemploLista {
 
