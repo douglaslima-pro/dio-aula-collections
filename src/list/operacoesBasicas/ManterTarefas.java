@@ -29,6 +29,7 @@ public class ManterTarefas {
 				if (descricao.equals("")) {
 					System.out.println("Descrição vazia!");
 				} else {
+					System.out.println();
 					System.out.print("Confirma a criação da tarefa? (S/N) ");
 					confirmacao = scanner.next().charAt(0);
 					scanner.nextLine(); // limpa o buffer
@@ -38,60 +39,48 @@ public class ManterTarefas {
 						System.out.println("A tarefa foi criada com sucesso!");
 					}
 				}
-				System.out.println();
-				System.out.println("Aperte ENTER para continuar...");
-				scanner.nextLine();
 				break;
 			case 2:
 				System.out.println();
-				if (lista.obterNumeroTotalTarefas() == 0) {
+				if (lista.listaVazia()) {
 					System.out.println("Lista vazia!");
-				} else {
-					exibirTarefas(lista);
-					System.out.print("Digite o número da tarefa que deseja remover: ");
-					int indiceDaTarefa = scanner.nextInt();
-					scanner.nextLine(); // limpa o buffer
-					indiceDaTarefa--;
-					Tarefa tarefa = lista.obterTarefaNoIndice(indiceDaTarefa);
-					if (tarefa == null) {
+					break;
+				}
+				exibirTarefas(lista);
+				System.out.print("Digite o número da tarefa que deseja remover: ");
+				int indiceDaTarefa = scanner.nextInt() - 1;
+				scanner.nextLine(); // limpa o buffer
+				System.out.println();
+				System.out.print("Confirma a remoção da tarefa? (S/N)");
+				confirmacao = scanner.next().charAt(0);
+				scanner.nextLine(); // limpa o buffer
+				if (confirmacao == 'S' || confirmacao == 's') {
+					if (lista.removerTarefa(indiceDaTarefa)) {
 						System.out.println();
-						System.out.println("Número de tarefa inválido!");
+						System.out.println("A tarefa foi removida com sucesso!");
 					} else {
 						System.out.println();
-						System.out.print("Confirma a remoção da tarefa? (S/N)");
-						confirmacao = scanner.next().charAt(0);
-						scanner.nextLine(); // limpa o buffer
-						if (confirmacao == 'S' || confirmacao == 's') {
-							lista.removerTarefa(tarefa.getDescricao());
-							System.out.println();
-							System.out.println("A tarefa foi removida com sucesso!");
-						}
+						System.out.println("Número de tarefa inválido");
 					}
 				}
-				System.out.println();
-				System.out.println("Aperte ENTER para continuar...");
-				scanner.nextLine();
 				break;
 			case 3:
 				System.out.println();
-				if (lista.obterNumeroTotalTarefas() == 0) {
+				if (lista.listaVazia()) {
 					System.out.println("Lista vazia!");
-				} else {
-					exibirTarefas(lista);
+					break;
 				}
-				System.out.println();
-				System.out.println("Aperte ENTER para continuar...");
-				scanner.nextLine();
+				exibirTarefas(lista);
 				break;
 			case 4:
 				break;
 			default:
 				System.out.println();
 				System.out.println("Opção inválida!");
-				System.out.println();
-				System.out.println("Aperte ENTER para continuar...");
-				scanner.nextLine();
 			}
+			System.out.println();
+			System.out.println("Aperte ENTER para continuar...");
+			scanner.nextLine();
 		} while (opcao != 4);
 		scanner.close();
 		System.out.println();

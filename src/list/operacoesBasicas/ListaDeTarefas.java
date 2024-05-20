@@ -48,18 +48,18 @@ public class ListaDeTarefas {
 
 	/**
 	 * <p>
-	 * Remove uma tarefa da lista com base em sua descrição.
+	 * Remove uma tarefa da lista com base no índice.
 	 * </p>
 	 * 
-	 * @param descricao descrição da tarefa
+	 * @param indice posição da tarefa na lista
+	 * @return {@code true} se a tarefa existir na lista
 	 */
-	public boolean removerTarefa(String descricao) {
-		for (Tarefa tarefa : this.listaDeTarefas) {
-			if (tarefa.getDescricao().compareTo(descricao) == 0) {
-				return this.listaDeTarefas.remove(tarefa);
-			}
+	public boolean removerTarefa(int indice) {
+		if (this.obterTarefaNoIndice(indice) != null) {
+			return this.listaDeTarefas.remove(this.obterTarefaNoIndice(indice));
+		} else {
+			return false;
 		}
-		return false;
 	}
 
 	/**
@@ -90,7 +90,8 @@ public class ListaDeTarefas {
 	 * </p>
 	 * 
 	 * @param indice posição da tarefa na lista
-	 * @return uma tarefa com base no índice, ou null se não existir tarefa na posição do índice
+	 * @return uma tarefa com base no índice, ou {@code null} se a tarefa não
+	 *         existir no índice indicado
 	 */
 	public Tarefa obterTarefaNoIndice(int indice) {
 		try {
@@ -98,5 +99,16 @@ public class ListaDeTarefas {
 		} catch (IndexOutOfBoundsException e) {
 			return null;
 		}
+	}
+
+	/**
+	 * <p>
+	 * Retorna {@code true} se a lista estiver vazia.
+	 * </p>
+	 * 
+	 * @return {@code true} se a lista estiver vazia
+	 */
+	public boolean listaVazia() {
+		return this.listaDeTarefas.isEmpty();
 	}
 }
