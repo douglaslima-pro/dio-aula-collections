@@ -1,4 +1,4 @@
-package list.operacoesBasicas;
+package list.operacoesBasicas.tarefas;
 
 public class Tarefa implements Comparable<Tarefa> {
 	

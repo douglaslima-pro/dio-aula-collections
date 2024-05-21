@@ -1,4 +1,4 @@
-package list.operacoesBasicas;
+package list.operacoesBasicas.compras;
 
 public class Item implements Comparable<Item> {
 	

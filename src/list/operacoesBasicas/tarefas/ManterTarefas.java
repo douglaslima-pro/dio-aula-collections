@@ -1,4 +1,4 @@
-package list.operacoesBasicas;
+package list.operacoesBasicas.tarefas;
 
 import java.util.List;
 import java.util.Scanner;

@@ -1,10 +1,10 @@
-package list.operacoesBasicas;
+package list.operacoesBasicas.compras;
 
 import java.util.List;
 import java.util.Scanner;
 import java.util.Locale;
 
-public class ManterCarrinhoDeCompras {
+public class ManterCompras {
 
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.of("pt", "BR"));
