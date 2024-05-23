@@ -8,7 +8,7 @@ import java.util.Locale;
 public class ManterLivros {
 
 	public static void main(String[] args) {
-		Locale.setDefault(Locale.of("pt", "BR"));
+		Locale.setDefault(Locale.forLanguageTag("pt-BR"));
 		Scanner scanner = new Scanner(System.in);
 
 		CatalogoLivros catalogoLivros = new CatalogoLivros();
