@@ -1,10 +1,7 @@
 package set.operacoesBasicas.convidados;
 
-<<<<<<< HEAD
 import java.util.Objects;
 
-=======
->>>>>>> 3fb49953bcdc6167f38285407008f718be7f2f9b
 public class Convidado {
 
 	private String nome;
@@ -31,7 +28,6 @@ public class Convidado {
 		this.codigoConvite = codigoConvite;
 	}
 
-<<<<<<< HEAD
 	/**
 	 * <p>
 	 * Retorna uma representação em {@code String} de um objeto desta classe.
@@ -84,6 +80,3 @@ public class Convidado {
 		return this.getCodigoConvite() == c.getCodigoConvite();
 	}
 }
-=======
-}
->>>>>>> 3fb49953bcdc6167f38285407008f718be7f2f9b
