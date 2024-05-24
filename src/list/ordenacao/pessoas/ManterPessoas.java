@@ -6,7 +6,7 @@ import java.util.Locale;
 public class ManterPessoas {
 
 	public static void main(String[] args) {
-		Locale.setDefault(Locale.of("pt", "BR"));
+		Locale.setDefault(Locale.forLanguageTag("pt-BR"));
 
 		OrdenacaoPessoas pessoas = new OrdenacaoPessoas();
 		pessoas.adicionarPessoa("Ana", 28, 1.68);

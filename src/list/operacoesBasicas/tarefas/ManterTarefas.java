@@ -7,7 +7,7 @@ import java.util.Locale;
 public class ManterTarefas {
 
 	public static void main(String[] args) {
-		Locale.setDefault(Locale.of("pt", "BR"));
+		Locale.setDefault(Locale.forLanguageTag("pt-BR"));
 		Scanner scanner = new Scanner(System.in);
 		ListaDeTarefas lista = new ListaDeTarefas();
 		int opcao;
